@@ -5,5 +5,8 @@ module.exports = {
             errors: true
         }
     },
-    lintOnSave: process.env.NODE_ENV !== 'production'
+    lintOnSave: process.env.NODE_ENV !== 'production',
+    chainWebpack: config => {
+        config.module.rules.delete('eslint');
+    } 
 };
